@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alloggi Prenotati</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+    }
+
+    .carousel-container {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .carousel {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      padding: 1rem;
+      box-sizing: border-box;
+    }
+
+    .photos {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .photos img {
+      width: 24%;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
+    .map {
+      width: 100%;
+      height: 250px;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+
+    .info {
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .price {
+      margin-top: 0.5rem;
+      font-weight: bold;
+    }
+
+    .controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      z-index: 2;
+    }
+
+    .controls button {
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+
+    .counter {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.5);
+      color: white;
+      padding: 0.3rem 0.7rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="carousel-container" id="carouselContainer">
+    <div class="carousel" id="carousel">
+      <!-- Alloggio 1 -->
+      <div class="slide">
+        <div class="photos">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max500/678766147.jpg?k=b4a5d86c1a7fc7314b3a9a9b17e472d8f97e6e5fc41afe93864b53c879e05d79&o=" alt="foto 1" />
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max500/678766180.jpg?k=b096d22607cca6bf42627f67c7b8dce7949c304844a30de9fd3c869bfc964d12&o=" alt="foto 2" />
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max500/678766189.jpg?k=eab6f32c13d2caa40b1a7c1f9a7efa3c58140716c37707c514f0fc0eb67b8801&o=" alt="foto 3" />
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max500/678766197.jpg?k=507d9705623ecf0818290e5982be41c9100cff9f545697a7db2189b261426fb6&o=" alt="foto 4" />
+        </div>
+        <div class="map" data-map></div>
+        <div class="info">
+          <div class="address">R. Min. Viveiros de Castro, 100 - Copacabana, Rio de Janeiro - RJ, 22021-010, Brasile</div>
+          <div class="price">1258€ / 5 posti letto = 251,60€</div>
+		  <a href="https://www.booking.com/Share-lgY20D">Booking</a>
+        </div>
+      </div>
+
+      <!-- Alloggio 2 -->
+      <div class="slide">
+        <div class="photos">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/494887867.jpg?k=b80bc6060b4ad875675b3fa09082a112b7ac8f785828cb728a5a30fe98404b19&o=" alt="foto 1" />
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max500/494887968.jpg?k=f79f3abbc424cfe0c412a004a7b4930526a0dac62c9a0cef8e9f396007a1e7e4&o=" alt="foto 2" />
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max500/494887964.jpg?k=15ee9e59a58ae044782112ffe8862e99deca92d0cfcb836fa13726e2b8ac5693&o=" alt="foto 3" />
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max500/494887967.jpg?k=aa37560692dc6a6ec2c5a84084d469254025da315d12b1f6c80a236a6a408326&o=" alt="foto 4" />
+        </div>
+        <div class="map" data-map></div>
+        <div class="info">
+          <div class="address">Rua Domingos Ferreira 219 Ap 804, Copacabana, Rio de Janeiro, CEP 22050-011, Brasile</div>
+          <div class="price">971€ / 4 posti letto = 242,75€</div>
+		  <a href="https://www.booking.com/Share-WQmka1">Booking</a>
+        </div>
+      </div>
+	  
+      <!-- Alloggio 3 -->
+      <div class="slide">
+        <div class="photos">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max500/631330584.jpg?k=6efd976c5db67ae9683839654236bc7dd02685c20bc379aeac9d3e7536d2594c&o=" alt="foto 1" />
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max500/634345316.jpg?k=3f80a0badf8c39b02a12abe97c05bbaf71963073283d78c6f96141ecf3ee509e&o=" alt="foto 2" />
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max500/631330586.jpg?k=a560a7b82cba54d4aaefe8ddedc231b3e83f26b587defba859d038899293db8c&o=" alt="foto 3" />
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max500/631330589.jpg?k=4a49d52ae61a9b8ff9aebc7c9133b9822f784caa1c769a0ea4d74527a1d27044&o=" alt="foto 4" />
+        </div>
+        <div class="map" data-map></div>
+        <div class="info">
+          <div class="address">Rua Inhangá, Copacabana, Rio de Janeiro, CEP 22020-060, Brasile</div>
+          <div class="price">556€ / 4 posti letto = 139€ *(non ha recensioni)</div>
+		  <a href="https://www.booking.com/Share-W1QWMs">Booking</a>
+        </div>
+      </div>
+	  
+      <!-- Alloggio 4 -->
+      <div class="slide">
+        <div class="photos">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max500/643014177.jpg?k=35a6b2bb4e81177c2b9ad61d34d958f5c2685efaebe06f0d6526cc57a57d6d1f&o=" alt="foto 1" />
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max500/643014184.jpg?k=cc89face0a7c403bdb07739abcb9fc7d9dd816a7ca3e5a88b34977639198350c&o=" alt="foto 2" />
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max500/643014114.jpg?k=ddbd9abb1417622d640851a3d0091b60a43130d974e962d4b5a389165a7891d5&o=" alt="foto 3" />
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max500/643014163.jpg?k=7beb2d73e8eef5607ed20a7dd5d6b1a505e1ae14bcf2abf022d79733d06f7152&o=" alt="foto 4" />
+        </div>
+        <div class="map" data-map></div>
+        <div class="info">
+          <div class="address">Rua 5 de Julho, 349, Copacabana, Rio de Janeiro, CEP 22051-030, Brasile</div>
+          <div class="price">1466€ / 5 posti letto = 293,20€</div>
+		  <a href="https://www.booking.com/Share-kC4hpdR">Booking</a>
+        </div>
+      </div>
+	  	  
+      <!-- Alloggio 5 -->
+      <div class="slide">
+        <div class="photos">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max500/631887259.jpg?k=a7e8a8486998c9fe2bc8f39eb95d3e6012291075a149949a9c3aa24be5bd9550&o=" alt="foto 1" />
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max500/631887295.jpg?k=ef33fc3fba7ba816041d8eff9c6ac53ad8aaef2a7560d3a9788788cf802ba019&o=" alt="foto 2" />
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max500/631887267.jpg?k=7694486711f90095c0dcd746ccb6f179edb2ba27949b053d2686d4837b864a04&o=" alt="foto 3" />
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max500/631887276.jpg?k=b04f79c98721c24a68eeb06be13910e5a9cedd75df8148048c9fcb8ff7351985&o=" alt="foto 4" />
+        </div>
+        <div class="map" data-map></div>
+        <div class="info">
+          <div class="address">114 Rua General Ribeiro da Costa, Leme, Rio de Janeiro, CEP 22010-050, Brasile</div>
+          <div class="price">1480€ / 6 posti letto = 246,67€</div>
+		  <a href="https://www.booking.com/Share-MwbbiP">Booking</a>
+        </div>
+      </div>
+	  	  	  
+      <!-- Alloggio 6 -->
+      <div class="slide">
+        <div class="photos">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/675327790.jpg?k=cccd7f3b799176cf08c53a40d2211eeaae28f7d6196ca251b29f2aaee31cb277&o=" alt="foto 1" />
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max500/675327765.jpg?k=189db5e9f78bee839a65bb7f6cbb6db84b258536ebd8a27344b78b70f18559d4&o=" alt="foto 2" />
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max500/675327765.jpg?k=189db5e9f78bee839a65bb7f6cbb6db84b258536ebd8a27344b78b70f18559d4&o=" alt="foto 3" />
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max500/675327766.jpg?k=d358d99decc95ed9af8192a9f4bf8c8da8f4d6a8abf5dd23d183299d2ac03797&o=" alt="foto 4" />
+        </div>
+        <div class="map" data-map></div>
+        <div class="info">
+          <div class="address">Avenida Atlântica, 2440 610, Copacabana, Rio de Janeiro, CEP 22041-001, Brasile</div>
+          <div class="price">1193€ / 4 posti letto = 298,25€</div>
+		  <a href="https://www.booking.com/Share-EVWTe8">Booking</a>
+        </div>
+      </div>
+	  	  	  	  
+      <!-- Alloggio 7 -->
+      <div class="slide">
+        <div class="photos">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/647806540.jpg?k=d654917e2ad56b2c652042b0c25a7813ce934d5422c9a7db62e24bc036eddb3e&o=" alt="foto 1" />
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max500/647806589.jpg?k=8b9ad3e91dcd42d4b155aa690ae6cb576dc759922b880bda77d58a2ba05611bd&o=" alt="foto 2" />
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max500/647806609.jpg?k=93efefda627a696ef95f059a69da41e6721cf667316dc0a2005a0d3d1cfc45df&o=" alt="foto 3" />
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max500/647806613.jpg?k=863a9032a2f8e467ef0b95e1c088df53f68939179285552cc4b5c37a79e72fb6&o=" alt="foto 4" />
+        </div>
+        <div class="map" data-map></div>
+        <div class="info">
+          <div class="address">Rua Barata Ribeiro, 471 302, Copacabana, Rio de Janeiro, CEP 22040-001, Brasile</div>
+          <div class="price">1362€ / 4 posti letto = 340,50€</div>
+		  <a href="https://www.booking.com/Share-D7dH4xl">Booking</a>
+        </div>
+      </div>
+	  	  	  	  	  
+      <!-- Alloggio 8 -->
+      <div class="slide">
+        <div class="photos">
+          <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1278226233158543730/original/23019740-26c4-43e6-9d51-f4dce7b80a66.jpeg?im_w=1200" alt="foto 1" />
+          <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1278226233158543730/original/5b15536e-e9b0-41f1-b1fe-eee2a13e0601.jpeg?im_w=720" alt="foto 2" />
+          <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1278226233158543730/original/d26de5aa-4d33-4354-b9b8-c6db455c3769.jpeg?im_w=1200" alt="foto 3" />
+          <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1278226233158543730/original/c8708cbf-d9c8-4cbb-afc6-3aab1a8d5e94.jpeg?im_w=1200" alt="foto 4" />
+        </div>
+        <div class="map" data-map></div>
+        <div class="info">
+          <div class="address">Av Nossa Sra de Copacabana, Brasile</div>
+          <div class="price">1075€ / 5 posti letto = 215€</div>
+		  <a href="https://www.airbnb.it/rooms/1278226233158543730?viralityEntryPoint=1&s=76">AirBnB</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button onclick="prevSlide()">‹</button>
+      <button onclick="nextSlide()">›</button>
+    </div>
+    <div class="counter" id="counter">1/2</div>
+  </div>
+
+  <script>
+    const carousel = document.getElementById("carousel");
+    const slides = document.querySelectorAll(".slide");
+    const counter = document.getElementById("counter");
+    let index = 0;
+
+    function updateCarousel() {
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+      counter.textContent = `${index + 1}/${slides.length}`;
+    }
+
+    function nextSlide() {
+      index = (index + 1) % slides.length;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      index = (index - 1 + slides.length) % slides.length;
+      updateCarousel();
+    }
+
+    // Swipe support
+    let startX = 0;
+    const container = document.getElementById("carouselContainer");
+
+    container.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+    });
+
+    container.addEventListener("touchend", (e) => {
+      const endX = e.changedTouches[0].clientX;
+      const diff = endX - startX;
+
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) prevSlide();
+        else nextSlide();
+      }
+    });
+
+    // Inserimento automatico mappe
+    document.querySelectorAll('.slide').forEach(slide => {
+      const address = slide.querySelector('.address')?.textContent.trim();
+      const mapDiv = slide.querySelector('[data-map]');
+
+      if (address && mapDiv) {
+        const query = encodeURIComponent(address);
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.google.com/maps?q=${query}&output=embed`;
+        iframe.allowFullscreen = true;
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        iframe.style.border = 'none';
+        mapDiv.appendChild(iframe);
+      }
+    });
+
+    // Inizializzazione
+    updateCarousel();
+  </script>
+</body>
+</html>
